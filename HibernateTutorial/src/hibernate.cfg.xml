@@ -11,6 +11,8 @@
 		<property name="hibernate.current_session_context_class">thread</property>
 		<property name="hibernate.hbm2ddl.auto">create</property>
 		<mapping class="com.sanroman.accesodatos.hibernatetutorial.model.Usuario"/>
+		<mapping class="com.sanroman.accesodatos.hibernatetutorial.model.Empresa"/>
+		<mapping class="com.sanroman.accesodatos.hibernatetutorial.model.Servicio"/>
 	</session-factory>
 
 </hibernate-configuration>
