@@ -37,17 +37,18 @@ public class Usuario {
 	@CollectionId(columns = { @Column(name = "domicilio_id") }, generator = "hilo-gen", type = @Type(type = "long"))
 	private List<Domicilio> domicilios = new ArrayList<Domicilio>();
 
-	
-	 @ManyToMany
-	  @JoinTable(name="servicio_usuario",
-	  joinColumns={@JoinColumn(name="usuario_id")},
-	  inverseJoinColumns={@JoinColumn(name="servicio_id")}) private
-	  List<Servicio> servicios=new ArrayList<Servicio>();
-	 
-	 
-	  public List<Servicio> getServicios() { return servicios; } public void
-	 setServicios(List<Servicio> servicios) { this.servicios = servicios; }
-	 
+	@ManyToMany
+	@JoinTable(name = "servicio_usuario", joinColumns = { @JoinColumn(name = "usuario_id") }, inverseJoinColumns = { @JoinColumn(name = "servicio_id") })
+	private List<Servicio> servicios = new ArrayList<Servicio>();
+
+	public List<Servicio> getServicios() {
+		return servicios;
+	}
+
+	public void setServicios(List<Servicio> servicios) {
+		this.servicios = servicios;
+	}
+
 	public List<Domicilio> getDomicilios() {
 		return domicilios;
 	}
